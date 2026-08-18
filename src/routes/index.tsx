@@ -243,7 +243,7 @@ function Index() {
               ¿Por qué conmigo?
             </p>
             <h2 className="mt-4 font-display text-3xl sm:text-4xl">
-              Porque llevo más de 20 años acompañando a personas de carne y hueso
+              Porque llevo más de 20 años acompañando a personas.
             </h2>
             <div className="mt-6 space-y-5 text-muted-foreground">
               <p>
