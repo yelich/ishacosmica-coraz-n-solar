@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import corazonBAsset from "@/assets/corazonB.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
 
@@ -178,8 +179,8 @@ function Index() {
 
           <div className="relative mt-4">
             <img
-              src={judyAsset.url}
-              alt="Judy Bentolila, astróloga y terapeuta holística"
+              src={corazonBAsset.url}
+              alt="Corazón Solar - Astrología para la nueva era"
               className="mx-auto w-full max-w-3xl"
             />
             <div
