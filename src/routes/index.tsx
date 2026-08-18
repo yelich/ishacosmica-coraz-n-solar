@@ -455,7 +455,7 @@ function Index() {
           <Divider />
           <div className="mx-auto max-w-3xl text-center">
             <img
-              src={markAsset.url}
+              src={getAssetUrl(markAsset.url)}
               alt="Emblema Corazón Solar"
               className="mx-auto mb-6 w-20 float-slow"
             />
