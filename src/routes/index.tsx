@@ -171,28 +171,12 @@ function Index() {
 
           <div className="relative mt-8 sm:mt-10">
             <div className="mx-auto w-full max-w-[1920px] px-0 sm:px-5 lg:px-10">
-              <div className="relative overflow-hidden rounded-none sm:rounded-2xl">
+              <div className="relative overflow-hidden rounded-none sm:rounded-2xl bg-transparent">
                 <img
                   src={corazonBAsset.url}
                   alt="Corazón Solar - Astrología para la nueva era"
                   className="w-full object-cover object-center"
-                  style={{ aspectRatio: "2000/600" }}
-                />
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "radial-gradient(70% 50% at 50% 50%, transparent 30%, oklch(0.13 0.03 300 / 90%) 100%)",
-                  }}
-                  aria-hidden="true"
-                />
-                <div
-                  className="pointer-events-none absolute inset-0"
-                  style={{
-                    background:
-                      "linear-gradient(to bottom, oklch(0.13 0.03 300) 0%, oklch(0.13 0.03 300 / 0%) 18%, oklch(0.13 0.03 300 / 0%) 72%, oklch(0.13 0.03 300) 100%)",
-                  }}
-                  aria-hidden="true"
+                  style={{ aspectRatio: "1750/525" }}
                 />
               </div>
             </div>
