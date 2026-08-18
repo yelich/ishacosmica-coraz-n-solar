@@ -139,11 +139,6 @@ function Index() {
         {/* HERO */}
         <section id="bienvenida" className="scroll-mt-24 pt-16 text-center">
           <div className="mx-auto max-w-4xl px-5">
-            <img
-              src={emblemaAsset.url}
-              alt="Emblema dorado del Corazón Solar"
-              className="mx-auto mb-8 w-56 float-slow mix-blend-screen sm:w-72"
-            />
             <p className="text-xs uppercase tracking-[0.4em] text-primary/80">
               Astrología para la nueva era
             </p>
