@@ -3,6 +3,7 @@ import { useState } from "react";
 import corazonBAsset from "@/assets/corazonB.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
+import { SocialIcon } from "@/components/SocialIcon";
 
 
 export const Route = createFileRoute("/")({
