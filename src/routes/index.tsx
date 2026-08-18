@@ -95,6 +95,7 @@ const REDES = [
 
 const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
 const WHATSAPP = "https://wa.me/5495411979623";
+const CALENDLY = "https://calendly.com/judyben9/30min";
 
 function Divider() {
   return (
@@ -122,7 +123,7 @@ function Index() {
               Ishacosmica · Corazón Solar
             </span>
           </a>
-          <nav className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm">
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
             {NAV.map((n) => (
               <a
                 key={n.id}
@@ -132,6 +133,12 @@ function Index() {
                 {n.label}
               </a>
             ))}
+            <a
+              href="#contacto"
+              className="rounded-full border border-primary/50 px-4 py-2 text-sm font-medium tracking-wide text-primary transition-colors hover:bg-primary/10"
+            >
+              Charlamos
+            </a>
           </nav>
         </div>
       </header>
@@ -159,12 +166,6 @@ function Index() {
                 className="w-full rounded-full bg-primary px-7 py-3 text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto"
               >
                 Quiero unirme a la comunidad
-              </a>
-              <a
-                href="#contacto"
-                className="w-full rounded-full border border-primary/50 px-7 py-3 text-sm font-medium tracking-wide text-primary transition-colors hover:bg-primary/10 sm:w-auto"
-              >
-                Charlamos
               </a>
             </div>
           </div>
@@ -341,13 +342,21 @@ function Index() {
             </p>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {SERVICIOS.map((s) => (
-                <article key={s.titulo} className="card-mystic rounded-3xl p-8">
+                <article key={s.titulo} className="card-mystic flex h-full flex-col rounded-3xl p-8">
                   <h3 className="font-display text-2xl text-gold-gradient">{s.titulo}</h3>
                   <p className="mt-4 text-muted-foreground">{s.texto}</p>
                   <p className="mt-6 text-xs uppercase tracking-[0.3em] text-primary/80">
                     Tu transformación
                   </p>
                   <p className="mt-3 text-muted-foreground">{s.transformacion}</p>
+                  <a
+                    href={CALENDLY}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-auto inline-block rounded-full bg-primary px-7 py-3 text-center text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
+                  >
+                    Agendar
+                  </a>
                 </article>
               ))}
             </div>
@@ -468,19 +477,6 @@ function Index() {
                 Entrar a la comunidad
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm">
-              {REDES.map((r) => (
-                <a
-                  key={r.label}
-                  href={r.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-muted-foreground transition-colors hover:text-primary"
-                >
-                  {r.label}
-                </a>
-              ))}
-            </div>
           </div>
         </section>
       </main>
@@ -490,6 +486,20 @@ function Index() {
           Ishacosmica · Corazón Solar
         </p>
         <p className="mt-3">Judith Bentolila · Astrología para la Nueva Era</p>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+          {REDES.map((r) => (
+            <a
+              key={r.label}
+              href={r.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={r.label}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <SocialIcon network={r.label} />
+            </a>
+          ))}
+        </div>
       </footer>
     </div>
   );
