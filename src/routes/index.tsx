@@ -95,6 +95,7 @@ const REDES = [
 
 const TELEGRAM = "https://t.me/+laZUpJV0Skk2MDMx";
 const WHATSAPP = "https://wa.me/5495411979623";
+const CALENDLY = "https://calendly.com/judyben9/30min";
 
 function Divider() {
   return (
@@ -104,6 +105,56 @@ function Divider() {
       <span className="h-px flex-1 bg-gradient-to-l from-transparent to-primary/50" />
     </div>
   );
+}
+
+function SocialIcon({ network }: { network: string }) {
+  const className = "h-5 w-5";
+  switch (network) {
+    case "Instagram":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+        </svg>
+      );
+    case "WhatsApp":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+        </svg>
+      );
+    case "Telegram":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 3L9.218 10.083 2 11 2 12 9.218 13.917 22 21 22 3z" />
+        </svg>
+      );
+    case "TikTok":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z" />
+        </svg>
+      );
+    case "YouTube":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z" />
+          <path d="M10 15l5-3-5-3z" />
+        </svg>
+      );
+    case "Spotify":
+      return (
+        <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M8 9.5c3.5-1.5 7.5-1.5 11 0" />
+          <path d="M8 13c3-1 6.5-1 9 0" />
+          <path d="M8 16.5c2-0.5 4.5-0.5 6.5 0" />
+        </svg>
+      );
+    default:
+      return null;
+  }
 }
 
 function Index() {
@@ -122,7 +173,7 @@ function Index() {
               Ishacosmica · Corazón Solar
             </span>
           </a>
-          <nav className="flex flex-wrap items-center gap-x-5 gap-y-1 text-sm">
+          <nav className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
             {NAV.map((n) => (
               <a
                 key={n.id}
@@ -132,6 +183,12 @@ function Index() {
                 {n.label}
               </a>
             ))}
+            <a
+              href="#contacto"
+              className="rounded-full border border-primary/50 px-4 py-2 text-sm font-medium tracking-wide text-primary transition-colors hover:bg-primary/10"
+            >
+              Charlamos
+            </a>
           </nav>
         </div>
       </header>
@@ -159,12 +216,6 @@ function Index() {
                 className="w-full rounded-full bg-primary px-7 py-3 text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto"
               >
                 Quiero unirme a la comunidad
-              </a>
-              <a
-                href="#contacto"
-                className="w-full rounded-full border border-primary/50 px-7 py-3 text-sm font-medium tracking-wide text-primary transition-colors hover:bg-primary/10 sm:w-auto"
-              >
-                Charlamos
               </a>
             </div>
           </div>
@@ -341,13 +392,21 @@ function Index() {
             </p>
             <div className="mt-12 grid gap-6 md:grid-cols-3">
               {SERVICIOS.map((s) => (
-                <article key={s.titulo} className="card-mystic rounded-3xl p-8">
+                <article key={s.titulo} className="card-mystic flex h-full flex-col rounded-3xl p-8">
                   <h3 className="font-display text-2xl text-gold-gradient">{s.titulo}</h3>
                   <p className="mt-4 text-muted-foreground">{s.texto}</p>
                   <p className="mt-6 text-xs uppercase tracking-[0.3em] text-primary/80">
                     Tu transformación
                   </p>
                   <p className="mt-3 text-muted-foreground">{s.transformacion}</p>
+                  <a
+                    href={CALENDLY}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-auto inline-block rounded-full bg-primary px-7 py-3 text-center text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
+                  >
+                    Agendar
+                  </a>
                 </article>
               ))}
             </div>
@@ -468,19 +527,6 @@ function Index() {
                 Entrar a la comunidad
               </a>
             </div>
-            <div className="mt-12 flex flex-wrap justify-center gap-x-7 gap-y-3 text-sm">
-              {REDES.map((r) => (
-                <a
-                  key={r.label}
-                  href={r.url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-muted-foreground transition-colors hover:text-primary"
-                >
-                  {r.label}
-                </a>
-              ))}
-            </div>
           </div>
         </section>
       </main>
@@ -490,6 +536,20 @@ function Index() {
           Ishacosmica · Corazón Solar
         </p>
         <p className="mt-3">Judith Bentolila · Astrología para la Nueva Era</p>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+          {REDES.map((r) => (
+            <a
+              key={r.label}
+              href={r.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={r.label}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-primary/30 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+            >
+              <SocialIcon network={r.label} />
+            </a>
+          ))}
+        </div>
       </footer>
     </div>
   );
