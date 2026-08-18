@@ -138,59 +138,78 @@ function Index() {
 
       <main className="relative z-10">
         {/* HERO */}
-        <section id="bienvenida" className="scroll-mt-24 pt-16 text-center">
-          <div className="mx-auto max-w-4xl px-5">
+        <section id="bienvenida" className="scroll-mt-24 pt-10 sm:pt-16">
+          <div className="mx-auto max-w-5xl px-5 text-center">
             <p className="text-xs uppercase tracking-[0.4em] text-primary/80">
               Astrología para la nueva era
             </p>
-            <h1 className="mt-5 font-display text-4xl leading-tight sm:text-6xl">
+            <h1 className="mx-auto mt-4 max-w-3xl font-display text-[2rem] leading-[1.1] sm:text-5xl lg:text-6xl">
               Con <span className="text-gold-gradient">Judy Bentolila</span> transformas la
               incertidumbre en claridad absoluta
             </h1>
-            <p className="mt-7 text-lg text-muted-foreground">
+            <p className="mx-auto mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
               Bienvenida a Corazón Solar, el refugio cuántico donde transformamos tus crisis en
-              claridad a la velocidad de la luz. Este no es solo un espacio de estudio: es un
-              contenedor sagrado de evolución, contención y sabiduría compartida. Aquí nos
-              reunimos almas dispuestas a mirar más allá de lo visible, usando la astrología, el
-              tarot y la energía cuántica como brújulas inmediatas de vida.
+              claridad a la velocidad de la luz.
             </p>
-            <p className="mt-4 text-lg text-muted-foreground">
-              En Corazón Solar dejas de transitar tus cambios en soledad para integrarte en una red
-              de apoyo que eleva tu vibración y te sostiene en cada paso de tu despertar
-              espiritual. ¡Tu lugar junto al fuego sagrado está listo!
-            </p>
-            <div className="mt-9 flex flex-wrap justify-center gap-4">
+            <div className="mt-7 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href={TELEGRAM}
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-full bg-primary px-7 py-3 text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90"
+                className="w-full rounded-full bg-primary px-7 py-3 text-sm font-medium tracking-wide text-primary-foreground transition-opacity hover:opacity-90 sm:w-auto"
               >
                 Quiero unirme a la comunidad
               </a>
               <a
                 href="#contacto"
-                className="rounded-full border border-primary/50 px-7 py-3 text-sm font-medium tracking-wide text-primary transition-colors hover:bg-primary/10"
+                className="w-full rounded-full border border-primary/50 px-7 py-3 text-sm font-medium tracking-wide text-primary transition-colors hover:bg-primary/10 sm:w-auto"
               >
                 Charlamos
               </a>
             </div>
           </div>
 
-          <div className="relative mt-4">
-            <img
-              src={corazonBAsset.url}
-              alt="Corazón Solar - Astrología para la nueva era"
-              className="mx-auto w-full max-w-3xl"
-            />
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background:
-                  "radial-gradient(60% 55% at 50% 45%, transparent 40%, oklch(0.13 0.03 300 / 85%) 100%), linear-gradient(to bottom, oklch(0.13 0.03 300) 0%, transparent 22%, transparent 62%, oklch(0.13 0.03 300) 98%)",
-              }}
-              aria-hidden="true"
-            />
+          <div className="relative mt-8 sm:mt-10">
+            <div className="mx-auto w-full max-w-[1920px] px-0 sm:px-5 lg:px-10">
+              <div className="relative overflow-hidden rounded-none sm:rounded-2xl">
+                <img
+                  src={corazonBAsset.url}
+                  alt="Corazón Solar - Astrología para la nueva era"
+                  className="w-full object-cover object-center"
+                  style={{ aspectRatio: "2000/600" }}
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "radial-gradient(70% 50% at 50% 50%, transparent 30%, oklch(0.13 0.03 300 / 90%) 100%)",
+                  }}
+                  aria-hidden="true"
+                />
+                <div
+                  className="pointer-events-none absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, oklch(0.13 0.03 300) 0%, oklch(0.13 0.03 300 / 0%) 18%, oklch(0.13 0.03 300 / 0%) 72%, oklch(0.13 0.03 300) 100%)",
+                  }}
+                  aria-hidden="true"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="mx-auto max-w-4xl px-5 pt-8 text-center sm:pt-12">
+            <p className="text-base text-muted-foreground sm:text-lg">
+              Este no es solo un espacio de estudio: es un contenedor sagrado de evolución,
+              contención y sabiduría compartida. Aquí nos reunimos almas dispuestas a mirar más allá
+              de lo visible, usando la astrología, el tarot y la energía cuántica como brújulas
+              inmediatas de vida.
+            </p>
+            <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+              En Corazón Solar dejas de transitar tus cambios en soledad para integrarte en una red
+              de apoyo que eleva tu vibración y te sostiene en cada paso de tu despertar
+              espiritual. ¡Tu lugar junto al fuego sagrado está listo!
+            </p>
           </div>
         </section>
 
