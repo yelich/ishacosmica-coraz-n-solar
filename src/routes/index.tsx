@@ -4,6 +4,7 @@ import corazonBAsset from "@/assets/corazonB.png.asset.json";
 import judyAsset from "@/assets/judy.png.asset.json";
 import markAsset from "@/assets/mark.png.asset.json";
 import { SocialIcon } from "@/components/SocialIcon";
+import { getAssetUrl } from "@/lib/asset-url";
 
 
 export const Route = createFileRoute("/")({
@@ -120,7 +121,11 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-3">
           <a href="#bienvenida" className="flex items-center gap-3">
-            <img src={markAsset.url} alt="Emblema Corazón Solar" className="h-10 w-10" />
+            <img
+              src={getAssetUrl(markAsset.url)}
+              alt="Emblema Corazón Solar"
+              className="h-10 w-10"
+            />
             <span className="font-display text-lg tracking-[0.18em] text-gold-gradient uppercase sm:text-xl">
               Ishacosmica · Corazón Solar
             </span>
@@ -176,7 +181,7 @@ function Index() {
             <div className="mx-auto w-full max-w-[1920px] px-0 sm:px-5 lg:px-10">
               <div className="relative overflow-hidden rounded-none sm:rounded-2xl bg-transparent">
                 <img
-                  src={corazonBAsset.url}
+                  src={getAssetUrl(corazonBAsset.url)}
                   alt="Corazón Solar - Astrología para la nueva era"
                   className="w-full object-cover object-center"
                   style={{ aspectRatio: "1750/525" }}
@@ -281,7 +286,7 @@ function Index() {
           <div className="mx-auto grid max-w-6xl items-center gap-10 md:grid-cols-2">
             <div className="relative">
               <img
-                src={judyAsset.url}
+                src={getAssetUrl(judyAsset.url)}
                 alt="Retrato de Judith Bentolila, Ishacósmica"
                 className="w-full rounded-3xl border border-border"
               />
