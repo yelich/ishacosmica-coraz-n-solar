@@ -32,6 +32,17 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Download image assets for GitHub Pages
+        run: |
+          mkdir -p public/site-assets
+          for pointer in src/assets/*.asset.json; do
+            url=$(jq -r '.url' "$pointer")
+            filename=$(basename "$url")
+            curl --fail --silent --show-error --location \
+              "https://project--ed46e4c9-cdb3-4042-b1ed-712cf83fe566-dev.lovable.app${url}" \
+              --output "public/site-assets/${filename}"
+          done
+
       - name: Build static site
         run: bun run build
 
